@@ -32,11 +32,34 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Center = styled.div`
+export const ImageWrapper = styled.div`
+  position: relative;
+`;
+
+export const Text = styled.div`
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  ${({ theme }) => theme.mq.atTablet`
+    display: flex;
+  `}
+`;
+
+export const TextMobile = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  background: none;
+  ${({ theme }) => theme.mq.atTablet`
+    display: none;
+  `}
 `;
 
 export const Image = styled.img`
