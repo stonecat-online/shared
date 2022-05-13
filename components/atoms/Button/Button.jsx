@@ -1,10 +1,9 @@
-import styles from "./Button.module.css";
+import { Wrapper } from "./Button.styled";
 
-const Button = ({ children }) => (
-  <div>
-    <h1>Heading</h1>
-    <p>Body</p>
-  </div>
+const Button = ({ onClick, inverted = false }) => (
+  <Wrapper onClick={onClick} inverted={inverted}>
+    {"Project"}
+  </Wrapper>
 );
 
 export default Button;

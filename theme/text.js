@@ -1,122 +1,103 @@
-import { css } from 'styled-components';
-import mediaQueries from './mediaQueries';
-import { fontFamilyNames } from './fonts';
+import { css } from "styled-components";
+import mediaQueries from "./mediaQueries";
+import { fontFamilyNames } from "./fonts";
 
 const { ManropeVar, LibreBaskervilleVar } = fontFamilyNames;
 
 // New Text Styling
 
-interface fontTypeInterface {
-  fontSize: string;
-  lineHeight: string;
-  letterSpacing: string;
+const H1Base = {
+  fontSize: "1.75rem",
+  lineHeight: "2.25rem",
+  letterSpacing: "0.025rem",
   mq: {
     atTablet: {
-      fontSize: string;
-      lineHeight: string;
-      letterSpacing: string;
+      fontSize: "2.25rem",
+      lineHeight: "3rem",
+      letterSpacing: "0.025rem",
     },
     atDesktop: {
-      fontSize: string;
-      lineHeight: string;
-      letterSpacing: string;
-    }
-  }
-}
-
-const H1Base: fontTypeInterface = {
-  fontSize: '1.75rem',
-  lineHeight: '2.25rem',
-  letterSpacing: '0.025rem',
-  mq: {
-    atTablet: {
-      fontSize: '2.25rem',
-      lineHeight: '3rem',
-      letterSpacing: '0.025rem'
+      fontSize: "3rem",
+      lineHeight: "4rem",
+      letterSpacing: "0.03125rem",
     },
-    atDesktop: {
-      fontSize: '3rem',
-      lineHeight: '4rem',
-      letterSpacing: '0.03125rem'
-    }
-  }
+  },
 };
 
-const H2Base: fontTypeInterface = {
-  fontSize: '1.625rem',
-  lineHeight: '2.1875rem',
-  letterSpacing: '0.0125rem',
+const H2Base = {
+  fontSize: "1.625rem",
+  lineHeight: "2.1875rem",
+  letterSpacing: "0.0125rem",
   mq: {
     atTablet: {
-      fontSize: '2.125rem',
-      lineHeight: '3rem',
-      letterSpacing: '0.025rem'
+      fontSize: "2.125rem",
+      lineHeight: "3rem",
+      letterSpacing: "0.025rem",
     },
     atDesktop: {
-      fontSize: '2.8125rem',
-      lineHeight: '4rem',
-      letterSpacing: '0.0375rem'
-    }
-  }
+      fontSize: "2.8125rem",
+      lineHeight: "4rem",
+      letterSpacing: "0.0375rem",
+    },
+  },
 };
 
-
-const BodyLBase: fontTypeInterface = {
-  fontSize: '1rem',
-  lineHeight: '1.5625rem',
-  letterSpacing: '0.00625rem',
+const BodyLBase = {
+  fontSize: "1rem",
+  lineHeight: "1.5625rem",
+  letterSpacing: "0.00625rem",
   mq: {
     atTablet: {
-      fontSize: '1rem',
-      lineHeight: '1.6875rem',
-      letterSpacing: '0.0125rem'
+      fontSize: "1rem",
+      lineHeight: "1.6875rem",
+      letterSpacing: "0.0125rem",
     },
     atDesktop: {
-      fontSize: '1rem',
-      lineHeight: '1.6875rem',
-      letterSpacing: '0.0125rem'
-    }
-  }
+      fontSize: "1rem",
+      lineHeight: "1.6875rem",
+      letterSpacing: "0.0125rem",
+    },
+  },
 };
 
-const BodyMBase: fontTypeInterface = {
-  fontSize: '0.875rem',
-  lineHeight: '1.4375rem',
-  letterSpacing: '0.00625rem',
+const BodyMBase = {
+  fontSize: "0.875rem",
+  lineHeight: "1.4375rem",
+  letterSpacing: "0.00625rem",
   mq: {
     atTablet: {
-      fontSize: '1rem',
-      lineHeight: '1.5625rem',
-      letterSpacing: '0.00625rem'
+      fontSize: "1rem",
+      lineHeight: "1.5625rem",
+      letterSpacing: "0.00625rem",
     },
     atDesktop: {
-      fontSize: '1rem',
-      lineHeight: '1.5625rem',
-      letterSpacing: '0.00625rem'
-    }
-  }
+      fontSize: "1rem",
+      lineHeight: "1.5625rem",
+      letterSpacing: "0.00625rem",
+    },
+  },
 };
 
-const standardTextStyles: object = {
+const standardTextStyles = {
   h1RegManrope: {
     ...H1Base,
     fontFamily: ManropeVar,
-    fontWeight: '700'
+    fontWeight: "700",
   },
   h2RegManrope: {
     ...H2Base,
     fontFamily: ManropeVar,
-    fontWeight: '400'
+    fontWeight: "400",
   },
   BodyLRegularManrope: {
     ...BodyLBase,
     fontFamily: ManropeVar,
-    fontWeight: '400'
+    fontWeight: "400",
   },
   BodyMRegularManrope: {
     ...BodyMBase,
     fontFamily: ManropeVar,
-    fontWeight: '400'
+    fontWeight: "400",
   },
   h1RegQuadraat: {
     ...H1Base,
@@ -134,7 +115,6 @@ const standardTextStyles: object = {
     ...BodyMBase,
     fontFamily: LibreBaskervilleVar,
   },
-
 };
 
 //
@@ -143,17 +123,16 @@ const standardTextStyles: object = {
 const customTextStyles: object = {
   cus1: {
     ...BodyLBase,
-    fontFamily: ManropeVar
+    fontFamily: ManropeVar,
   },
-
 };
 
 const textStyles: object = {
   ...customTextStyles,
-  ...standardTextStyles
+  ...standardTextStyles,
 };
 
-const generateTextMediaQueries = (textStyleMediaQueries: any): any =>
+const generateTextMediaQueries = (textStyleMediaQueries) =>
   css`
     ${() => mediaQueries.atTablet`
     font-size: ${textStyleMediaQueries.atTablet.fontSize};
@@ -167,7 +146,7 @@ const generateTextMediaQueries = (textStyleMediaQueries: any): any =>
   `}
   `;
 
-const text: object = Object.keys(textStyles).reduce((accum, label) => {
+const text = Object.keys(textStyles).reduce((accum, label) => {
   const textCss = () => css`
     font-family: ${textStyles[label].fontFamily};
     font-size: ${textStyles[label].fontSize};
