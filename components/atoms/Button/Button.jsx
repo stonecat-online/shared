@@ -1,8 +1,8 @@
 import { Wrapper } from "./Button.styled";
 
-const Button = ({ onClick, inverted = false }) => (
+const Button = ({ children, onClick, inverted = false }) => (
   <Wrapper onClick={onClick} inverted={inverted}>
-    {"Project"}
+    {children}
   </Wrapper>
 );
 

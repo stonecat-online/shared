@@ -1,29 +1,42 @@
 import styled from "styled-components";
 
+
 export const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column-reverse;
+  align-items: center;
   width: 100%;
   height: auto;
-  min-height: 225px;
-  max-height: 400px;
+  min-height: 14rem;
+  margin: 1rem 0;
   color: ${({ inverted }) =>
     inverted ? "var(--cprimary)" : "var(--csecondary)"};
-  border: 1px solid
-    ${({ inverted }) => (inverted ? "var(--cprimary)" : "var(--csecondary)")};
   border-radius: var(--bradius);
   overflow: hidden;
   background-color: ${({ bg }) => bg};
+  box-shadow: 0 70px 140px 0 rgb(130 136 171 / 20%);
+  cursor: pointer;
+  
+  ${({ theme }) => theme.mq.atTablet`
+    flex-direction: row;
+  `}
+
 
   & > div {
-    width: 50%;
+    height: 100%;
+    
+    ${({ theme }) => theme.mq.atTablet`
+        width: 50%;
+    `}
+
   }
 
   & > div:nth-child(2) {
     width: 100%;
-
+    height: 100%;
     ${({ theme }) => theme.mq.atTablet`
       width: 50%;
+      height: 100%;
     `}
   }
 
@@ -37,13 +50,22 @@ export const ImageWrapper = styled.div`
 `;
 
 export const Text = styled.div`
-  display: none;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  padding: 3rem 2rem;
+  text-align: left;
   ${({ theme }) => theme.mq.atTablet`
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 3rem;
+
   `}
+
+  & > * {
+    width: 100%;
+  }
+
 `;
 
 export const TextMobile = styled.div`
@@ -55,8 +77,9 @@ export const TextMobile = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: left;
   background: none;
+  padding: 3rem;
   ${({ theme }) => theme.mq.atTablet`
     display: none;
   `}

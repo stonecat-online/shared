@@ -6,7 +6,7 @@ const { ManropeVar, LibreBaskervilleVar } = fontFamilyNames;
 
 // New Text Styling
 
-const H1Base = {
+const h2Base = {
   fontSize: "1.75rem",
   lineHeight: "2.25rem",
   letterSpacing: "0.025rem",
@@ -79,8 +79,8 @@ const BodyMBase = {
 };
 
 const standardTextStyles = {
-  h1RegManrope: {
-    ...H1Base,
+  h2RegManrope: {
+    ...h2Base,
     fontFamily: ManropeVar,
     fontWeight: "700",
   },
@@ -99,8 +99,8 @@ const standardTextStyles = {
     fontFamily: ManropeVar,
     fontWeight: "400",
   },
-  h1RegQuadraat: {
-    ...H1Base,
+  h2RegQuadraat: {
+    ...h2Base,
     fontFamily: LibreBaskervilleVar,
   },
   h2RegQuadraat: {
@@ -120,14 +120,14 @@ const standardTextStyles = {
 //
 // Custom Text Styling
 //
-const customTextStyles: object = {
+const customTextStyles = {
   cus1: {
     ...BodyLBase,
     fontFamily: ManropeVar,
   },
 };
 
-const textStyles: object = {
+const textStyles = {
   ...customTextStyles,
   ...standardTextStyles,
 };

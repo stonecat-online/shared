@@ -5,7 +5,7 @@ const div: StyledFunction<ComponentProps<any> & HTMLProps<HTMLInputElement>> = s
 
 const Wrapper = div`
     & > h2 {
-        ${({ theme }) => theme.text.h1RegQuadraat};
+        ${({ theme }) => theme.text.h2RegQuadraat};
         color: ${({ theme }) => theme.colours.offBlack};
         text-align: left;
         font-weight: 400;

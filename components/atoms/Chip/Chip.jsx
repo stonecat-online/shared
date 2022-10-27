@@ -1,10 +1,13 @@
 import { Wrapper } from "./Chip.styled.jsx";
-import Repeat from "../../icons/Repeat";
 
-const Chip = ({ children, href, onClick, inverted = false }) => (
-  <Wrapper inverted={inverted} onClick={onClick} href={href}>
-    <Repeat />
-  </Wrapper>
-);
+const Chip = ({ children, href, onClick, inverted = false }) => {
+
+  return (
+    <Wrapper inverted={inverted} onClick={onClick} href={href}>
+      {children}
+    </Wrapper>
+  );
+}
+
 
 export default Chip;
